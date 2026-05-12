@@ -1076,78 +1076,81 @@
       display: block;
     }
 
+    /* ── Topbar row wrappers: transparent on desktop, structural on mobile ── */
+    #topbar-row1, #topbar-row2 { display: contents; }
+    /* Explicit desktop order so rows don't shift visual position */
+    #logo         { order: 1; }
+    #tabs         { order: 2; }
+    #add-space-btn{ order: 3; }
+    #import-btn   { order: 4; }
+    #search-wrap  { order: 5; }
+    #sync-status  { order: 6; }
+
     /* ── Mobile responsive ── */
     @media (max-width: 640px) {
 
-      /* Topbar: multi-row */
+      /* Topbar: 2 explicit rows */
       #topbar {
+        flex-direction: column;
         height: auto;
-        flex-wrap: wrap;
-        padding: 8px 12px 0;
-        row-gap: 0;
+        padding: 0 12px;
+        gap: 0;
       }
 
-      #logo {
-        order: 1;
-        flex: 1;
-        margin-right: 0;
-        line-height: 32px;
-      }
-
-      #sync-status {
-        order: 2;
-        margin-bottom: 8px;
+      /* Row 1: logo + sync */
+      #topbar-row1 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--border);
         flex-shrink: 0;
       }
 
-      /* Row 2: tabs (scrollable) + add-space-btn */
+      /* Row 2: tabs (horizontal scroll) + add-space + search */
+      #topbar-row2 {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        width: 100%;
+        padding: 6px 0;
+        min-width: 0;
+        flex-shrink: 0;
+      }
+
+      #logo { order: unset; flex: 1; line-height: 1; margin-right: 0; }
+      #sync-status { order: unset; flex-shrink: 0; }
+
       #tabs {
-        order: 3;
+        order: unset;
         flex: 1;
+        min-width: 0;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         flex-wrap: nowrap;
-        padding-bottom: 8px;
-        min-width: 0;
       }
-
-      #tabs::-webkit-scrollbar {
-        display: none;
-      }
+      #tabs::-webkit-scrollbar { display: none; }
 
       #add-space-btn {
-        order: 4;
-        padding: 4px 8px;
-        font-size: 11px;
-        margin-bottom: 8px;
+        order: unset;
+        flex-shrink: 0;
+        padding: 5px 8px;
+        font-size: 12px;
+      }
+
+      #import-btn { display: none; }
+
+      #search-wrap {
+        order: unset;
+        margin-left: 0;
         flex-shrink: 0;
       }
-
-      /* Hide import on mobile */
-      #import-btn {
-        display: none;
-      }
-
-      /* Row 3: search full width */
-      #search-wrap {
-        order: 5;
-        width: 100%;
-        margin-left: 0;
-        padding-bottom: 8px;
-      }
-
-      #search {
-        width: 100%;
-        font-size: 16px;
-      }
+      #search { width: 110px; font-size: 16px; }
 
       /* Prevent iOS input zoom */
-      input,
-      select,
-      textarea {
-        font-size: 16px !important;
-      }
+      input, select, textarea { font-size: 16px !important; }
 
       /* Content */
       #content {
@@ -1165,44 +1168,25 @@
         min-height: 30px;
         font-size: 14px;
       }
-
-      .block-header-actions {
-        opacity: 1;
-      }
+      .block-header-actions { opacity: 1; }
 
       /* Taller tap targets */
-      .bm-item {
-        padding: 8px 10px;
-        min-height: 40px;
-      }
-
-      .block-action-btn {
-        padding: 6px 8px;
-        font-size: 15px;
-      }
+      .bm-item { padding: 8px 10px; min-height: 40px; }
+      .block-action-btn { padding: 6px 8px; font-size: 15px; }
 
       /* Pinned bar */
-      #pinned-bar {
-        padding: 5px 8px;
-      }
+      #pinned-bar { padding: 5px 8px; }
 
       /* Bottom bar */
-      #bottom-bar {
-        padding: 8px 12px;
-      }
+      #bottom-bar { padding: 8px 12px; }
 
       /* Modal */
-      .modal {
-        width: 95vw;
-        padding: 16px;
-      }
+      .modal { width: 95vw; padding: 16px; }
 
       /* Setup card */
-      .setup-card {
-        padding: 20px 16px;
-      }
+      .setup-card { padding: 20px 16px; }
 
-      /* Context submenu: drop below, not to the side */
+      /* Context submenu: drop below on mobile */
       .ctx-submenu {
         left: 0 !important;
         right: auto !important;
@@ -1216,23 +1200,27 @@
 <body>
   <div id="app">
     <div id="topbar">
-      <div id="logo">🔖 Alex's Bookmarks</div>
-      <div id="tabs"></div>
-      <button id="add-space-btn" title="Add space">＋ Space</button>
-      <button id="import-btn" title="Import Chrome/Firefox bookmarks HTML">⬆ Import</button>
-      <input type="file" id="import-file" accept=".html,.htm" style="display:none">
-      <div id="search-wrap">
-        <div class="icon">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-            <path
-              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z" />
-          </svg>
-          <input id="search" type="search" placeholder="Search bookmarks…" autocomplete="off">
+      <div id="topbar-row1">
+        <div id="logo">🔖 Alex's Bookmarks</div>
+        <div id="sync-status" title="Sync status — click to configure">
+          <div id="sync-dot"></div>
+          <span id="sync-label">Not configured</span>
         </div>
       </div>
-      <div id="sync-status" title="Sync status — click to configure">
-        <div id="sync-dot"></div>
-        <span id="sync-label">Not configured</span>
+      <div id="topbar-row2">
+        <div id="tabs"></div>
+        <button id="add-space-btn" title="Add space">＋ Space</button>
+        <button id="import-btn" title="Import Chrome/Firefox bookmarks HTML">⬆ Import</button>
+        <input type="file" id="import-file" accept=".html,.htm" style="display:none">
+        <div id="search-wrap">
+          <div class="icon">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z" />
+            </svg>
+            <input id="search" type="search" placeholder="Search bookmarks…" autocomplete="off">
+          </div>
+        </div>
       </div>
     </div>
 
@@ -7773,6 +7761,8 @@
       if (!tabsEl) return;
       tabSortable = Sortable.create(tabsEl, {
         animation: 150,
+        delay: 150,
+        delayOnTouchOnly: true,
         forceFallback: true,
         ghostClass: 'tab-ghost',
         chosenClass: 'tab-chosen',
@@ -7810,6 +7800,8 @@
           animation: 0,           // disable animation to prevent columns reflow glitch
           handle: '.block-header',
           draggable: '.block-card',
+          delay: 200,
+          delayOnTouchOnly: true,
           forceFallback: true,
           ghostClass: 'drag-ghost',
           chosenClass: 'drag-chosen',
@@ -7885,6 +7877,8 @@
         const s = Sortable.create(list, {
           group: { name: 'bookmarks', pull: true, put: true },
           animation: 120,
+          delay: 200,
+          delayOnTouchOnly: true,
           forceFallback: true,
           filter: '.bm-del',
           preventOnFilter: false,
@@ -7911,6 +7905,8 @@
       pinnedSortable = Sortable.create(pinnedList, {
         group: { name: 'bookmarks', pull: true, put: true },
         animation: 120,
+        delay: 200,
+        delayOnTouchOnly: true,
         ghostClass: 'bm-ghost',
         chosenClass: 'bm-chosen',
         onAdd(evt) {
