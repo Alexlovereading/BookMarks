@@ -1070,6 +1070,146 @@
     .pin-chip.bm-chosen {
       border-color: var(--accent)
     }
+
+    /* ── Context submenu: support click/touch toggle ── */
+    .ctx-has-sub.sub-open .ctx-submenu {
+      display: block;
+    }
+
+    /* ── Mobile responsive ── */
+    @media (max-width: 640px) {
+
+      /* Topbar: multi-row */
+      #topbar {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 8px 12px 0;
+        row-gap: 0;
+      }
+
+      #logo {
+        order: 1;
+        flex: 1;
+        margin-right: 0;
+        line-height: 32px;
+      }
+
+      #sync-status {
+        order: 2;
+        margin-bottom: 8px;
+        flex-shrink: 0;
+      }
+
+      /* Row 2: tabs (scrollable) + add-space-btn */
+      #tabs {
+        order: 3;
+        flex: 1;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+        min-width: 0;
+      }
+
+      #tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      #add-space-btn {
+        order: 4;
+        padding: 4px 8px;
+        font-size: 11px;
+        margin-bottom: 8px;
+        flex-shrink: 0;
+      }
+
+      /* Hide import on mobile */
+      #import-btn {
+        display: none;
+      }
+
+      /* Row 3: search full width */
+      #search-wrap {
+        order: 5;
+        width: 100%;
+        margin-left: 0;
+        padding-bottom: 8px;
+      }
+
+      #search {
+        width: 100%;
+        font-size: 16px;
+      }
+
+      /* Prevent iOS input zoom */
+      input,
+      select,
+      textarea {
+        font-size: 16px !important;
+      }
+
+      /* Content */
+      #content {
+        padding: 8px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Show item actions always (no hover on touch) */
+      .bm-del,
+      .bm-pin,
+      .bm-vault-btn {
+        opacity: 1;
+        padding: 5px 7px;
+        min-width: 30px;
+        min-height: 30px;
+        font-size: 14px;
+      }
+
+      .block-header-actions {
+        opacity: 1;
+      }
+
+      /* Taller tap targets */
+      .bm-item {
+        padding: 8px 10px;
+        min-height: 40px;
+      }
+
+      .block-action-btn {
+        padding: 6px 8px;
+        font-size: 15px;
+      }
+
+      /* Pinned bar */
+      #pinned-bar {
+        padding: 5px 8px;
+      }
+
+      /* Bottom bar */
+      #bottom-bar {
+        padding: 8px 12px;
+      }
+
+      /* Modal */
+      .modal {
+        width: 95vw;
+        padding: 16px;
+      }
+
+      /* Setup card */
+      .setup-card {
+        padding: 20px 16px;
+      }
+
+      /* Context submenu: drop below, not to the side */
+      .ctx-submenu {
+        left: 0 !important;
+        right: auto !important;
+        top: 100% !important;
+        min-width: 100%;
+      }
+    }
   </style>
 </head>
 
@@ -7227,9 +7367,10 @@
       document.querySelectorAll('.blocks-grid').forEach(grid => {
         const cards = [...grid.querySelectorAll(':scope > .block-card')];
         if (!cards.length) { grid.style.height = '0'; return; }
-        const COLS = 5, GAP = 12;
+        const GAP = 12;
         const gridW = grid.clientWidth;
         if (!gridW) return;
+        const COLS = gridW < 480 ? 1 : gridW < 720 ? 2 : gridW < 1000 ? 3 : gridW < 1300 ? 4 : 5;
         const colW = Math.floor((gridW - GAP * (COLS - 1)) / COLS);
         // First pass: set width so scrollHeight is accurate
         cards.forEach(c => {
@@ -7944,8 +8085,19 @@
       submenu.style.right = (menuLeft + 190 > window.innerWidth - 170) ? '100%' : 'auto';
       m.classList.add('open');
     }
-    function hideCtxMenu() { document.getElementById('ctx-menu').classList.remove('open') }
+    function hideCtxMenu() {
+      const m = document.getElementById('ctx-menu');
+      m.classList.remove('open');
+      document.getElementById('ctx-move-space').classList.remove('sub-open');
+    }
     document.addEventListener('click', hideCtxMenu);
+
+    // Touch: toggle submenu on tap instead of hover
+    document.getElementById('ctx-move-space').addEventListener('click', e => {
+      if (!('ontouchstart' in window) && window.matchMedia('(hover: hover)').matches) return;
+      e.stopPropagation();
+      document.getElementById('ctx-move-space').classList.toggle('sub-open');
+    });
 
     document.getElementById('ctx-rename').addEventListener('click', () => {
       if (!ctxBlockId) return;
