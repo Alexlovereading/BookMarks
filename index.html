@@ -8346,7 +8346,7 @@
           requestAnimationFrame(() => requestAnimationFrame(layoutBlocks));
           return;
         }
-        const COLS = gridW < 480 ? 1 : gridW < 720 ? 2 : gridW < 1000 ? 3 : gridW < 1300 ? 4 : 5;
+        const COLS = gridW < 640 ? 1 : gridW < 720 ? 2 : gridW < 1000 ? 3 : gridW < 1300 ? 4 : 5;
         const colW = Math.floor((gridW - GAP * (COLS - 1)) / COLS);
         // First pass: set width so scrollHeight is accurate
         cards.forEach(c => {
