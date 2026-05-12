@@ -209,8 +209,15 @@
       align-items: center;
       gap: 5px;
     }
-    #tabs-more-btn.has-hidden { display: inline-flex; }
-    #tabs-more-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    #tabs-more-btn.has-hidden {
+      display: inline-flex;
+    }
+
+    #tabs-more-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
 
     #more-dropdown {
       display: none;
@@ -221,9 +228,13 @@
       border-radius: 8px;
       padding: 4px 0;
       min-width: 190px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.5);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
     }
-    #more-dropdown.open { display: block; }
+
+    #more-dropdown.open {
+      display: block;
+    }
+
     #more-dropdown .section-label {
       font-size: 10px;
       text-transform: uppercase;
@@ -232,6 +243,7 @@
       padding: 6px 14px 2px;
       user-select: none;
     }
+
     .more-space-item {
       display: flex;
       align-items: center;
@@ -243,8 +255,16 @@
       user-select: none;
       transition: background .1s;
     }
-    .more-space-item:hover { background: var(--surface2); }
-    .more-space-item.is-active { color: var(--accent); font-weight: 600; }
+
+    .more-space-item:hover {
+      background: var(--surface2);
+    }
+
+    .more-space-item.is-active {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
     .more-vis-btn {
       margin-left: auto;
       padding: 2px 5px;
@@ -258,8 +278,19 @@
       flex-shrink: 0;
       opacity: .7;
     }
-    .more-vis-btn:hover { background: var(--border); color: var(--text); opacity: 1; }
-    .more-divider { height: 1px; background: var(--border); margin: 4px 0; }
+
+    .more-vis-btn:hover {
+      background: var(--border);
+      color: var(--text);
+      opacity: 1;
+    }
+
+    .more-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 4px 0;
+    }
+
     .more-badge {
       font-size: 10px;
       background: var(--surface2);
@@ -7503,7 +7534,7 @@
       dd.innerHTML = '';
 
       const visibleSpaces = DATA.spaces.filter(sp => !sp.hidden);
-      const hiddenSpaces  = DATA.spaces.filter(sp => sp.hidden);
+      const hiddenSpaces = DATA.spaces.filter(sp => sp.hidden);
 
       function makeItem(sp, si) {
         const item = document.createElement('div');
@@ -8485,8 +8516,8 @@
       }
     }
 
-    // Service worker registration
-    if ('serviceWorker' in navigator) {
+    // Service worker registration (not supported in Chrome extensions)
+    if ('serviceWorker' in navigator && !chrome?.tabs) {
       navigator.serviceWorker.register('./sw.js').catch(() => { });
     }
 
