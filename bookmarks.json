@@ -4773,148 +4773,705 @@
       ]
     },
     {
-      "id": "ai",
+      "id": "poj7c2059rbmp184h8k",
       "name": "AI",
-      "pinned": [],
       "blocks": [
         {
-          "id": "ai-chat-block",
-          "title": "Chat & Assistant",
-          "group": "AI",
-          "color": "#a371f7",
+          "id": "b1778511469989cjgy35po24",
+          "title": "Vibe Coding",
+          "color": "#1f6feb",
           "bookmarks": [
             {
-              "id": "ai-chatgpt",
-              "title": "ChatGPT",
-              "url": "https://chat.openai.com/"
+              "id": "bm1778511469989frzcmhgodso",
+              "title": "LMArena",
+              "url": "https://lmarena.ai/zh/leaderboard/"
             },
             {
-              "id": "ai-claude",
-              "title": "Claude",
-              "url": "https://claude.ai/"
+              "id": "bm1778511469989qkd7qrbz6md",
+              "title": "NVIDIA NIM APIs",
+              "url": "https://build.nvidia.com/explore/discover"
             },
             {
-              "id": "ai-gemini",
-              "title": "Gemini",
-              "url": "https://gemini.google.com/"
+              "id": "bm1778511469989s9axx16yrw",
+              "title": "Oasis",
+              "url": "https://cc.ioasis.xyz/console/log"
             },
             {
-              "id": "ai-grok",
-              "title": "Grok",
-              "url": "https://grok.x.com/"
-            },
-            {
-              "id": "ai-perplexity",
-              "title": "Perplexity",
-              "url": "https://www.perplexity.ai/"
-            },
-            {
-              "id": "ai-copilot",
-              "title": "Copilot",
-              "url": "https://copilot.microsoft.com/"
+              "id": "bm1778511469989uzshpyqn3i",
+              "title": "创建 PPT 生成 Skills",
+              "url": "https://mp.weixin.qq.com/s/QRek8OUN_BvBvOPr6ySvBA"
             }
           ]
         },
         {
-          "id": "ai-image-block",
-          "title": "Image & Video",
-          "group": "AI",
-          "color": "#f78166",
+          "id": "b1778511469989cguqln3fj5",
+          "title": "（Image）",
+          "color": "#9e6a03",
           "bookmarks": [
             {
-              "id": "ai-midjourney",
-              "title": "Midjourney",
-              "url": "https://www.midjourney.com/"
+              "id": "bm17785114699893lut8txkl59",
+              "title": "Civitai (C站)",
+              "url": "https://civitai.com/"
             },
             {
-              "id": "ai-runway",
+              "id": "bm1778511469989slsy87y0wx9",
+              "title": "Tensor.Art",
+              "url": "https://tensor.art/"
+            },
+            {
+              "id": "bm1778511469989pg8d9v8ikwo",
+              "title": "SeaArt AI (海艺)",
+              "url": "https://seaart.ai/zhCN"
+            },
+            {
+              "id": "bm1778511469989qujc15ngpaj",
+              "title": "Lexica",
+              "url": "https://lexica.art/"
+            },
+            {
+              "id": "bm1778511469989h4qht9i2bv",
+              "title": "LiblibAI-AI特效",
+              "url": "https://www.liblib.art/video-effect"
+            },
+            {
+              "id": "bm17785114699893qvxhravte6",
+              "title": "Dreamina (CapCut)",
+              "url": "https://www.capcut.cn/ai-tool/platform"
+            },
+            {
+              "id": "bm1778511469989gqbt7j1trkm",
+              "title": "云界AI",
+              "url": "https://www.yunjie.art/creation/fast"
+            },
+            {
+              "id": "bm1778511469989wd7hhwk5u3n",
+              "title": "Comicai",
+              "url": "https://comicai.ai/"
+            },
+            {
+              "id": "bm1778511469989uvoii5b0a38",
+              "title": "AI Porn",
+              "url": "https://pornpen.ai/search"
+            },
+            {
+              "id": "bm17785114699899mxzfbgmxu",
+              "title": "Adobe Firefly",
+              "url": "https://firefly.adobe.com/?ff_channel=adobe_com&ff_campaign=ffly_homepage&ff_source=firefly_seo"
+            }
+          ]
+        },
+        {
+          "id": "b17785114699894yy4qd801yw",
+          "title": "Image编辑工具",
+          "color": "#d29922",
+          "bookmarks": [
+            {
+              "id": "bm1778511469989awhmcyz2ywg",
+              "title": "Clipdrop",
+              "url": "https://clipdrop.co/"
+            },
+            {
+              "id": "bm1778511469989ku8fqyght5",
+              "title": "Magnific AI (高清放大)",
+              "url": "https://magnific.ai/"
+            },
+            {
+              "id": "bm1778511469989ox46v35umwp",
+              "title": "krea.ai (实时绘图)",
+              "url": "https://www.krea.ai/home"
+            },
+            {
+              "id": "bm1778511469989h8ws9ip24wf",
+              "title": "Upscayl - AI Image Upscaler",
+              "url": "https://upscayl.org/"
+            },
+            {
+              "id": "bm17785114699898qz83r8qrbs",
+              "title": "DiffusionBee",
+              "url": "https://diffusionbee.com/"
+            },
+            {
+              "id": "bm17785114699893rj5zbs0fwe",
+              "title": "LeiaPix (3D效果)",
+              "url": "https://www.leiapix.com/"
+            },
+            {
+              "id": "bm1778511469989afiqu6xar69",
+              "title": "Anthony&apos;s QR Toolkit",
+              "url": "https://qrcode.antfu.me/"
+            },
+            {
+              "id": "bm17785114699890xy3r9346aoi",
+              "title": "QR Code Generator",
+              "url": "https://dnschecker.org/qr-code-generator.php"
+            },
+            {
+              "id": "bm17785114699896u5m46j4fzd",
+              "title": "Stitch - Design with AI",
+              "url": "https://stitch.withgoogle.com/"
+            },
+            {
+              "id": "bm177851146998935joc8wmg7w",
+              "title": "Bloom",
+              "url": "https://www.topazlabs.com/bloom"
+            },
+            {
+              "id": "bm17785114699894kypa0rc8fw",
+              "title": "MidJourney-Styles-and-Keywords",
+              "url": "https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference"
+            }
+          ]
+        },
+        {
+          "id": "b1778511469989cgtqll03osk",
+          "title": "🧭 导航站 (Navigation)",
+          "color": "#c9aaed",
+          "bookmarks": [
+            {
+              "id": "bm1778511469989rvsts906wt",
+              "title": "AI工具集导航",
+              "url": "https://ai-bot.cn/"
+            },
+            {
+              "id": "bm17785114699896jeuimwrsdl",
+              "title": "AI导航 (UISDC)",
+              "url": "https://hao.uisdc.com/ai/"
+            },
+            {
+              "id": "bm1778511469989yt7qz3hoz8",
+              "title": "AI导航网",
+              "url": "https://ai.tboxn.com/"
+            },
+            {
+              "id": "bm1778511469989abrh4m4yjnv",
+              "title": "AI导航 (ToolsDar)",
+              "url": "https://toolsdar.com/ai"
+            },
+            {
+              "id": "bm1778511469989fjhj89huhik",
+              "title": "AI Tool (ClickUp)",
+              "url": "https://doc.clickup.com/25598832/d/h/rd6vg-14247/0b79ca1dc0f7429/rd6vg-12207"
+            },
+            {
+              "id": "bm1778511469989jqxorkpgi4",
+              "title": "Worldopenai",
+              "url": "https://www.worldopenai.com/#%E8%B5%84%E6%BA%90%E4%B8%93%E5%8C%BA"
+            },
+            {
+              "id": "bm1778511469989yonw148zldo",
+              "title": "LMArena (模型竞技场)",
+              "url": "https://lmarena.ai/leaderboard"
+            },
+            {
+              "id": "bm1778511469989frizyw7n4h8",
+              "title": "Terminal-Bench",
+              "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0"
+            },
+            {
+              "id": "bm1778511469989cjpip8aqqh8",
+              "title": "Humanity's Last Exam",
+              "url": "https://agi.safe.ai/"
+            }
+          ]
+        },
+        {
+          "id": "b1778511469989k7ggn1bnu9d",
+          "title": "🎵 音频 (Audio)",
+          "color": "#f85149",
+          "bookmarks": [
+            {
+              "id": "bm17785114699895sl4ej65zdw",
+              "title": "Suno | AI Music",
+              "url": "https://suno.com/home"
+            },
+            {
+              "id": "bm1778511469989gs3wgc7tjhp",
+              "title": "Udio",
+              "url": "https://www.udio.com/"
+            },
+            {
+              "id": "bm1778511469989swuabqnzojn",
+              "title": "ElevenLabs",
+              "url": "https://elevenlabs.io/"
+            },
+            {
+              "id": "bm1778511469989gmveevzfaa",
+              "title": "MiniMax 语音和音乐",
+              "url": "https://www.minimaxi.com/audio"
+            },
+            {
+              "id": "bm177851146998914fru2gu1fkl",
+              "title": "MiniMax Audio&Music",
+              "url": "https://www.minimax.io/audio"
+            },
+            {
+              "id": "bm1778511469989b9ejubb46hc",
+              "title": "录咖AI-语音翻译",
+              "url": "https://reccloud.cn/start?position=tab1"
+            }
+          ]
+        },
+        {
+          "id": "b17785114699897hkyj6rbdck",
+          "title": "数字人与营销",
+          "color": "#238636",
+          "bookmarks": [
+            {
+              "id": "bm17785114699897ihrv9jy4yl",
+              "title": "HeyGen",
+              "url": "https://www.heygen.com/"
+            },
+            {
+              "id": "bm17785114699890247t1zou365",
+              "title": "HeyGen - 翻译视频口型同步",
+              "url": "https://app.heygen.com/apps"
+            },
+            {
+              "id": "bm1778511469989m5vfpgm60fq",
+              "title": "Arcads - 广告视频生成",
+              "url": "https://www.arcads.ai/"
+            },
+            {
+              "id": "bm1778511469989hk33wveeo4",
+              "title": "Topview: #1 电商视频",
+              "url": "https://www.topview.ai/zh"
+            },
+            {
+              "id": "bm1778511469989mo35cl09weh",
+              "title": "即创",
+              "url": "https://aic.oceanengine.com/workbench?bpId=1789070817228938"
+            }
+          ]
+        },
+        {
+          "id": "b1778511469989u1wcuv56jto",
+          "title": "📝 AI Prompt (提示词)",
+          "color": "#56d364",
+          "bookmarks": [
+            {
+              "id": "bm1778511469989mx33o53f0nf",
+              "title": "Awesome Prompts",
+              "url": "https://www.awesomegptprompts.com/"
+            },
+            {
+              "id": "bm177851146998943y5oe0qgs",
+              "title": "ChatGPT Shortcut",
+              "url": "https://www.aishort.top/?tags=favorite"
+            },
+            {
+              "id": "bm1778511469989yaof2zut8fa",
+              "title": "Learn Prompting",
+              "url": "https://learnprompting.org/docs/intro"
+            },
+            {
+              "id": "bm1778511469989fk5ivg0h84f",
+              "title": "Midjourney Prompt Helper",
+              "url": "https://midjourney-prompt-helper.netlify.app/"
+            },
+            {
+              "id": "bm1778511469989urwc666cxe",
+              "title": "MidJourney Prompt Tool",
+              "url": "https://prompt.noonshot.com/"
+            },
+            {
+              "id": "bm1778511469989h2kkj1eqmpg",
+              "title": "Midjourney Generator (HuggingFace)",
+              "url": "https://huggingface.co/spaces/doevent/prompt-generator"
+            },
+            {
+              "id": "bm177851146998981608va5619",
+              "title": "PromptBase",
+              "url": "https://promptbase.com/"
+            },
+            {
+              "id": "bm1778511469989nw2kzyynl7o",
+              "title": "🍌Nano Banana提示词案例库",
+              "url": "https://opennana.com/awesome-prompt-gallery/"
+            },
+            {
+              "id": "bm1778511469989hyeb9p07oac",
+              "title": "HubSpot&apos;s Loop Marketing Prompt Library",
+              "url": "https://offers.hubspot.com/view/loop-marketing-prompts?hubs_signup-url=offers.hubspot.com/loop-marketing-prompts&hubs_signup-cta=submit"
+            }
+          ]
+        },
+        {
+          "id": "b17785114699894637hwps2uy",
+          "title": "视频生成",
+          "color": "#f85149",
+          "bookmarks": [
+            {
+              "id": "bm1778511469989qxgws9tzejn",
               "title": "Runway",
               "url": "https://runwayml.com/"
             },
             {
-              "id": "ai-sora",
-              "title": "Sora",
-              "url": "https://sora.com/"
+              "id": "bm1778511469989d1rczv4vwwj",
+              "title": "Gen-2 by Runway",
+              "url": "https://research.runwayml.com/gen2"
             },
             {
-              "id": "ai-ideogram",
-              "title": "Ideogram",
-              "url": "https://ideogram.ai/"
+              "id": "bm17785114699893thagkqvkpw",
+              "title": "Luma AI",
+              "url": "https://lumalabs.ai/"
             },
             {
-              "id": "ai-kling",
-              "title": "Kling AI",
-              "url": "https://klingai.com/"
+              "id": "bm1778511469989r3y8ks1zzy",
+              "title": "Boards | Dream Machine",
+              "url": "https://dream-machine.lumalabs.ai/"
             },
             {
-              "id": "ai-hailuo",
-              "title": "Hailuo AI",
-              "url": "https://hailuoai.video/"
+              "id": "bm1778511469989l9k6nkfwn6m",
+              "title": "Pika",
+              "url": "https://pika.art/"
+            },
+            {
+              "id": "bm1778511469989r864bq128hr",
+              "title": "Vidu AI",
+              "url": "https://www.vidu.com/zh/home/recommend"
+            },
+            {
+              "id": "bm1778511469989rbrodtxzksl",
+              "title": "海螺视频 (Hailuo)",
+              "url": "https://hailuoai.com/"
+            },
+            {
+              "id": "bm1778511469989rgsip44mknp",
+              "title": "即梦AI (Dreamina)",
+              "url": "https://www.google.com/search?q=https://dreamina.capcut.com/ai-tool/home%3F"
+            },
+            {
+              "id": "bm1778511469989v0ru56dnibn",
+              "title": "即梦AI-图片加背景换发型衣服",
+              "url": "https://jimeng.jianying.com/ai-tool/home"
+            },
+            {
+              "id": "bm1778511469989v51b6vxi82r",
+              "title": "通义万相 | 数字人视频换脸",
+              "url": "https://tongyi.aliyun.com/wan/generate/avatar/character-swap?model=wan2.2"
+            },
+            {
+              "id": "bm177851146998979sanubqodu",
+              "title": "Higgsfield",
+              "url": "https://beta.higgsfield.ai/"
             }
           ]
         },
         {
-          "id": "ai-tools-block",
-          "title": "Tools & Dev",
-          "group": "AI",
-          "color": "#3fb950",
+          "id": "b1778511469989eah3z1wu4jr",
+          "title": "剪辑与后期",
+          "color": "#1f6feb",
           "bookmarks": [
             {
-              "id": "ai-huggingface",
+              "id": "bm1778511469989zgrabbr5hik",
+              "title": "Opus Clip (长视频变短)",
+              "url": "https://www.opus.pro/"
+            },
+            {
+              "id": "bm1778511469989w7c9id20km9",
+              "title": "vidyo.ai (长视频变短)",
+              "url": "https://vidyo.ai/"
+            },
+            {
+              "id": "bm1778511469989i38jn5mcsga",
+              "title": "Capcut魔法工具",
+              "url": "https://www.capcut.com/magic-tools?enter_from=page_header&current_page=landing_page&from_page=work_space&start_tab=video"
+            },
+            {
+              "id": "bm1778511469989ijp3t58v6r",
+              "title": "Hugging-Qwen-图片角度切换",
+              "url": "https://huggingface.co/spaces/linoyts/Qwen-Image-Edit-Angles"
+            },
+            {
+              "id": "bm1778511469989v8rlbq8qsm",
+              "title": "TapNow",
+              "url": "https://app.tapnow.ai/#/home"
+            },
+            {
+              "id": "bm17785114699899kcggxvrikk",
+              "title": "Move AI (动捕)",
+              "url": "https://www.move.ai/"
+            },
+            {
+              "id": "bm1778511469989lrcfuigfd0n",
+              "title": "Mixamo (3D动画)",
+              "url": "https://www.mixamo.com/#/?page=1&type=Motion%2CMotionPack"
+            }
+          ]
+        },
+        {
+          "id": "b1778511469989w1xetayj4j",
+          "title": "平台与大模型",
+          "color": "#d29922",
+          "bookmarks": [
+            {
+              "id": "bm1778511469989lmm6z7i74r",
               "title": "Hugging Face",
               "url": "https://huggingface.co/"
             },
             {
-              "id": "ai-replicate",
-              "title": "Replicate",
-              "url": "https://replicate.com/"
+              "id": "bm177851146998908fwm5holzyw",
+              "title": "Google AI Studio",
+              "url": "https://aistudio.google.com/models/gemini-3"
             },
             {
-              "id": "ai-cursor",
-              "title": "Cursor",
-              "url": "https://cursor.com/"
+              "id": "bm17785114699894r9fdt3oe5g",
+              "title": "OpenRouter",
+              "url": "https://openrouter.ai/chat"
             },
             {
-              "id": "ai-v0",
-              "title": "v0 by Vercel",
-              "url": "https://v0.dev/"
+              "id": "bm17785114699897lxacfw16o",
+              "title": "OpenModelDB",
+              "url": "https://openmodeldb.info/"
             },
             {
-              "id": "ai-bolt",
-              "title": "Bolt",
-              "url": "https://bolt.new/"
+              "id": "bm17785114699896qysj2035p2",
+              "title": "FineWeb",
+              "url": "https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1"
             }
           ]
         },
         {
-          "id": "ai-writing-block",
-          "title": "Writing & Content",
-          "group": "AI",
-          "color": "#d29922",
+          "id": "b1778511469989qgpp5nm0u97",
+          "title": "ComfyUI / Stable Diffusion 资源",
+          "color": "#9e6a03",
           "bookmarks": [
             {
-              "id": "ai-jasper",
-              "title": "Jasper",
-              "url": "https://www.jasper.ai/"
+              "id": "bm1778511469989j8ykfplhnwp",
+              "title": "ControlNet",
+              "url": "https://github.com/lllyasviel/ControlNet"
             },
             {
-              "id": "ai-copy",
-              "title": "Copy.ai",
-              "url": "https://www.copy.ai/"
+              "id": "bm1778511469989qk26423spm",
+              "title": "Control-lora",
+              "url": "https://huggingface.co/stabilityai/control-lora"
             },
             {
-              "id": "ai-notion-ai",
-              "title": "Notion AI",
-              "url": "https://www.notion.so/"
+              "id": "bm1778511469989hvriy209a8s",
+              "title": "AnimateDiff",
+              "url": "https://github.com/ArtVentureX/comfyui-animatediff"
             },
             {
-              "id": "ai-gamma",
-              "title": "Gamma",
-              "url": "https://gamma.app/"
+              "id": "bm1778511469989o4i8qny4hi",
+              "title": "IP-Adapter (GitHub)",
+              "url": "https://github.com/tencent-ailab/IP-Adapter"
+            },
+            {
+              "id": "bm1778511469989w25jeybr8pr",
+              "title": "IP-Adapter (Hugging Face)",
+              "url": "https://huggingface.co/h94/IP-Adapter"
+            },
+            {
+              "id": "bm1778511469989cfow6exf4ud",
+              "title": "Latent Consistency Model",
+              "url": "https://github.com/0xbitches/ComfyUI-LCM"
+            },
+            {
+              "id": "bm1778511469989gbmg58nfu0l",
+              "title": "Lighting based picture control controlnet",
+              "url": "https://civitai.com/models/80536/lighting-based-picture-control-controlnet"
+            }
+          ]
+        },
+        {
+          "id": "b1778511469989t57b7lcmxw",
+          "title": "笔记与效率",
+          "color": "#c9aaed",
+          "bookmarks": [
+            {
+              "id": "bm17785114699892vct0xh48p9",
+              "title": "Memo",
+              "url": "https://mxmefbp9p0g.feishu.cn/docx/ZI3ldweTXorTvMxYLbucT00Un5n"
+            },
+            {
+              "id": "bm1778511469989v14pbq2u3o",
+              "title": "Minutes",
+              "url": "https://myminutes.ai/"
+            },
+            {
+              "id": "bm1778511469989x03harrywcj",
+              "title": "Granola",
+              "url": "https://www.granola.ai/"
+            },
+            {
+              "id": "bm17785114699891c4pcvbkzvch",
+              "title": "CleanShot X for Mac",
+              "url": "https://cleanshot.com/"
+            },
+            {
+              "id": "bm1778511469989o1h9m1qyug8",
+              "title": "Excalidraw",
+              "url": "https://excalidraw.com/"
+            },
+            {
+              "id": "bm1778511469989pr1833wcc8",
+              "title": "YouMind",
+              "url": "https://youmind.com/zh-CN/use-cases"
+            }
+          ]
+        },
+        {
+          "id": "b1778511469989r93736k3gwo",
+          "title": "MCP",
+          "color": "#1f6feb",
+          "bookmarks": [
+            {
+              "id": "bm1778511469989pmwwllb1am",
+              "title": "BrowserToolsMCP",
+              "url": "https://browsertools.agentdesk.ai/installation"
+            },
+            {
+              "id": "bm1778511469989lwmkokpyl9l",
+              "title": "Context7",
+              "url": "https://context7.com/"
+            },
+            {
+              "id": "bm1778511469989nc4uzzli2k8",
+              "title": "DeepWiki",
+              "url": "https://deepwiki.com/"
+            },
+            {
+              "id": "bm1778511469989v2fptaxjkzq",
+              "title": "MCP.So",
+              "url": "https://mcp.so/"
+            },
+            {
+              "id": "bm1778511469989qdtlbb29n7",
+              "title": "Official MCP Registry",
+              "url": "https://registry.modelcontextprotocol.io/"
+            },
+            {
+              "id": "bm1778511469989qfmtjvceshq",
+              "title": "MCP Servers Hub",
+              "url": "https://github.com/apappascs/mcp-servers-hub"
+            }
+          ]
+        },
+        {
+          "id": "b1778511469989rf8ol9fe3c",
+          "title": "Skills",
+          "color": "#9e6a03",
+          "bookmarks": [
+            {
+              "id": "bm17785114699898okwlclg8ht",
+              "title": "SkillsMP",
+              "url": "https://skillsmp.com/"
+            },
+            {
+              "id": "bm1778511469989q78h0h5fmd",
+              "title": "Skillstore",
+              "url": "https://skillstore.io/zh-hans/skills?category=writing&tools=claude"
+            },
+            {
+              "id": "bm1778511469989hzwjgfz7r6e",
+              "title": "ClawHub",
+              "url": "https://clawhub.ai/skills"
+            }
+          ]
+        },
+        {
+          "id": "b1778511469989quqlutf4u3b",
+          "title": "Google Labs / 实验项目",
+          "color": "#da3633",
+          "bookmarks": [
+            {
+              "id": "bm1778511469989ej6qiflxjx",
+              "title": "Google Labs",
+              "url": "https://labs.google/"
+            },
+            {
+              "id": "bm1778511469989yyx2w980mkm",
+              "title": "Google NotebookLM",
+              "url": "https://notebooklm.google/"
+            },
+            {
+              "id": "bm1778511469989ravxv10nfa",
+              "title": "labs.google/fx",
+              "url": "https://labs.google/fx"
+            },
+            {
+              "id": "bm1778511469989b7dx5805cxv",
+              "title": "Opal",
+              "url": "https://opal.google/landing/"
+            },
+            {
+              "id": "bm1778511469989rzaffswqjza",
+              "title": "Flow",
+              "url": "https://labs.google/flow/about"
+            },
+            {
+              "id": "bm1778511469989rmqlh0uwo89",
+              "title": "Lovart",
+              "url": "https://www.lovart.ai/zh"
+            }
+          ]
+        },
+        {
+          "id": "b1778511469989e4nssittind",
+          "title": "开发工具",
+          "color": "#8957e5",
+          "bookmarks": [
+            {
+              "id": "bm17785114699899icaw64q5q",
+              "title": "LangChain",
+              "url": "https://www.langchain.com/"
+            },
+            {
+              "id": "bm1778511469989j69imsdvkf",
+              "title": "Autogen",
+              "url": "https://github.com/microsoft/autogen"
+            },
+            {
+              "id": "bm17785114699894hkjzt17fhs",
+              "title": "MCP (Model Context Protocol)",
+              "url": "https://modelcontextprotocol.io/docs/getting-started/intro"
+            },
+            {
+              "id": "bm1778511469989mflqhoo6rd",
+              "title": "Get data (Postman)",
+              "url": "https://shop2cc888-1242125.postman.co/workspace/374e3786-8978-4e1b-8ccf-81a9c75d227c/request/50431369-4f011b7c-31c6-4d9b-bb6c-62e1e6c030ad"
+            },
+            {
+              "id": "bm1778511469989riasavn91x",
+              "title": "JSON Blob",
+              "url": "https://jsonblob.com/"
+            },
+            {
+              "id": "bm1778511469989q6cexrofakq",
+              "title": "Tiktokenizer",
+              "url": "https://tiktokenizer.vercel.app/"
+            },
+            {
+              "id": "bm1778511469989hi148tnsy3l",
+              "title": "LLM Visualization",
+              "url": "https://bbycroft.net/llm"
+            },
+            {
+              "id": "bm1778511469989v6ufh8pf5be",
+              "title": "Kiro",
+              "url": "https://kiro.dev/"
+            }
+          ]
+        },
+        {
+          "id": "b1778511469989c3tt3nxqmni",
+          "title": "UI",
+          "color": "#da3633",
+          "bookmarks": [
+            {
+              "id": "bm1778511469989n3oloo8zdg",
+              "title": "Readdy",
+              "url": "https://readdy.ai/"
+            },
+            {
+              "id": "bm1778511469989xiwk6r0ters",
+              "title": "Tweakcn",
+              "url": "https://tweakcn.com/"
             }
           ]
         }
-      ]
+      ],
+      "pinned": []
     },
     {
       "id": "personal",
