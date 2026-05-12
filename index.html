@@ -6988,6 +6988,9 @@
     let syncTimer = null;
     let ctxBlockId = null;
 
+    // ── Default Gist ID (pre-baked, not secret) ─────────────────────────
+    const PRESET_GIST_ID = '8fd5e331dee597b1a25795c191da6b1f';
+
     // ── Persistence ─────────────────────────────────────────────────────
     const LS_DATA = 'arc_newtab_v2';
     const LS_CFG = 'arc_newtab_cfg_v2';
@@ -7125,7 +7128,7 @@
     });
     document.getElementById('sync-status').addEventListener('click', () => {
       document.getElementById('setup-pat').value = syncConfig?.pat || '';
-      document.getElementById('setup-gist').value = syncConfig?.gistId || '';
+      document.getElementById('setup-gist').value = syncConfig?.gistId || PRESET_GIST_ID;
       document.getElementById('setup-status').textContent = '';
       showSetup();
     });
@@ -8086,6 +8089,8 @@
       }
       renderAll();
       if (!syncConfig) {
+        // Pre-fill Gist ID so user only needs to enter PAT
+        document.getElementById('setup-gist').value = PRESET_GIST_ID;
         showSetup();
       } else {
         setSyncStatus('busy', 'Syncing…');
