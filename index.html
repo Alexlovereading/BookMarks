@@ -31,14 +31,21 @@
       --radius: 8px;
     }
 
-    html,
+    html {
+      height: 100%;
+      overflow: hidden;
+    }
+
     body {
       height: 100%;
       background: var(--bg);
       color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 14px;
-      overflow: hidden
+      overflow: hidden;
+      /* iOS Safari: prevent elastic over-scroll on body */
+      position: fixed;
+      width: 100%;
     }
 
     /* ── Top bar ── */
@@ -405,12 +412,18 @@
     #app {
       display: flex;
       flex-direction: column;
-      height: 100vh
+      height: 100vh;
+      height: 100dvh;
+      /* modern browsers */
+      height: -webkit-fill-available;
+      /* iOS Safari fallback */
     }
 
     #content {
       flex: 1;
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      /* smooth scroll on iOS */
       padding: 10px 12px 8px
     }
 
@@ -7626,7 +7639,11 @@
         if (!cards.length) { grid.style.height = '0'; return; }
         const GAP = 12;
         const gridW = grid.clientWidth;
-        if (!gridW) return;
+        // iOS Safari may return 0 width on first paint — retry after a frame
+        if (!gridW) {
+          requestAnimationFrame(() => requestAnimationFrame(layoutBlocks));
+          return;
+        }
         const COLS = gridW < 480 ? 1 : gridW < 720 ? 2 : gridW < 1000 ? 3 : gridW < 1300 ? 4 : 5;
         const colW = Math.floor((gridW - GAP * (COLS - 1)) / COLS);
         // First pass: set width so scrollHeight is accurate
