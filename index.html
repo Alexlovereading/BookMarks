@@ -194,6 +194,81 @@
       color: var(--accent);
     }
 
+    /* ── More spaces button & dropdown ── */
+    #tabs-more-btn {
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text2);
+      cursor: pointer;
+      font-size: 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: none;
+      align-items: center;
+      gap: 5px;
+    }
+    #tabs-more-btn.has-hidden { display: inline-flex; }
+    #tabs-more-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    #more-dropdown {
+      display: none;
+      position: fixed;
+      z-index: 300;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px 0;
+      min-width: 190px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.5);
+    }
+    #more-dropdown.open { display: block; }
+    #more-dropdown .section-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--text2);
+      padding: 6px 14px 2px;
+      user-select: none;
+    }
+    .more-space-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--text);
+      user-select: none;
+      transition: background .1s;
+    }
+    .more-space-item:hover { background: var(--surface2); }
+    .more-space-item.is-active { color: var(--accent); font-weight: 600; }
+    .more-vis-btn {
+      margin-left: auto;
+      padding: 2px 5px;
+      border: none;
+      background: transparent;
+      color: var(--text2);
+      cursor: pointer;
+      font-size: 13px;
+      border-radius: 3px;
+      line-height: 1;
+      flex-shrink: 0;
+      opacity: .7;
+    }
+    .more-vis-btn:hover { background: var(--border); color: var(--text); opacity: 1; }
+    .more-divider { height: 1px; background: var(--border); margin: 4px 0; }
+    .more-badge {
+      font-size: 10px;
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 1px 6px;
+      color: var(--text2);
+      border: 1px solid var(--border);
+    }
+
     /* tab drag-over highlight */
     .tab-btn.drag-over {
       background: var(--accent) !important;
@@ -1077,14 +1152,35 @@
     }
 
     /* ── Topbar row wrappers: transparent on desktop, structural on mobile ── */
-    #topbar-row1, #topbar-row2 { display: contents; }
+    #topbar-row1,
+    #topbar-row2 {
+      display: contents;
+    }
+
     /* Explicit desktop order so rows don't shift visual position */
-    #logo         { order: 1; }
-    #tabs         { order: 2; }
-    #add-space-btn{ order: 3; }
-    #import-btn   { order: 4; }
-    #search-wrap  { order: 5; }
-    #sync-status  { order: 6; }
+    #logo {
+      order: 1;
+    }
+
+    #tabs {
+      order: 2;
+    }
+
+    #add-space-btn {
+      order: 3;
+    }
+
+    #import-btn {
+      order: 4;
+    }
+
+    #search-wrap {
+      order: 5;
+    }
+
+    #sync-status {
+      order: 6;
+    }
 
     /* ── Mobile responsive ── */
     @media (max-width: 640px) {
@@ -1119,8 +1215,17 @@
         flex-shrink: 0;
       }
 
-      #logo { order: unset; flex: 1; line-height: 1; margin-right: 0; }
-      #sync-status { order: unset; flex-shrink: 0; }
+      #logo {
+        order: unset;
+        flex: 1;
+        line-height: 1;
+        margin-right: 0;
+      }
+
+      #sync-status {
+        order: unset;
+        flex-shrink: 0;
+      }
 
       #tabs {
         order: unset;
@@ -1131,7 +1236,10 @@
         scrollbar-width: none;
         flex-wrap: nowrap;
       }
-      #tabs::-webkit-scrollbar { display: none; }
+
+      #tabs::-webkit-scrollbar {
+        display: none;
+      }
 
       #add-space-btn {
         order: unset;
@@ -1140,17 +1248,27 @@
         font-size: 12px;
       }
 
-      #import-btn { display: none; }
+      #import-btn {
+        display: none;
+      }
 
       #search-wrap {
         order: unset;
         margin-left: 0;
         flex-shrink: 0;
       }
-      #search { width: 110px; font-size: 16px; }
+
+      #search {
+        width: 110px;
+        font-size: 16px;
+      }
 
       /* Prevent iOS input zoom */
-      input, select, textarea { font-size: 16px !important; }
+      input,
+      select,
+      textarea {
+        font-size: 16px !important;
+      }
 
       /* Content */
       #content {
@@ -1168,23 +1286,42 @@
         min-height: 30px;
         font-size: 14px;
       }
-      .block-header-actions { opacity: 1; }
+
+      .block-header-actions {
+        opacity: 1;
+      }
 
       /* Taller tap targets */
-      .bm-item { padding: 8px 10px; min-height: 40px; }
-      .block-action-btn { padding: 6px 8px; font-size: 15px; }
+      .bm-item {
+        padding: 8px 10px;
+        min-height: 40px;
+      }
+
+      .block-action-btn {
+        padding: 6px 8px;
+        font-size: 15px;
+      }
 
       /* Pinned bar */
-      #pinned-bar { padding: 5px 8px; }
+      #pinned-bar {
+        padding: 5px 8px;
+      }
 
       /* Bottom bar */
-      #bottom-bar { padding: 8px 12px; }
+      #bottom-bar {
+        padding: 8px 12px;
+      }
 
       /* Modal */
-      .modal { width: 95vw; padding: 16px; }
+      .modal {
+        width: 95vw;
+        padding: 16px;
+      }
 
       /* Setup card */
-      .setup-card { padding: 20px 16px; }
+      .setup-card {
+        padding: 20px 16px;
+      }
 
       /* Context submenu: drop below on mobile */
       .ctx-submenu {
@@ -1209,6 +1346,7 @@
       </div>
       <div id="topbar-row2">
         <div id="tabs"></div>
+        <button id="tabs-more-btn" title="More spaces"></button>
         <button id="add-space-btn" title="Add space">＋ Space</button>
         <button id="import-btn" title="Import Chrome/Firefox bookmarks HTML">⬆ Import</button>
         <input type="file" id="import-file" accept=".html,.htm" style="display:none">
@@ -1233,6 +1371,8 @@
       <button id="add-block-btn">＋ Add block</button>
     </div>
   </div>
+
+  <div id="more-dropdown"></div>
 
   <!-- Modal: add/edit block -->
   <div id="modal-overlay">
@@ -7129,7 +7269,7 @@
       schedulePush();
     }
     function migrateData() {
-      DATA.spaces.forEach(sp => { if (!sp.pinned) sp.pinned = []; });
+      DATA.spaces.forEach(sp => { if (!sp.pinned) sp.pinned = []; if (sp.hidden === undefined) sp.hidden = false; });
     }
     function loadLocal() {
       const raw = localStorage.getItem(LS_DATA);
@@ -7270,54 +7410,56 @@
       tabs.innerHTML = '';
 
       DATA.spaces.forEach((sp, si) => {
-        // tab wrapper
-        const wrap = document.createElement('div');
-        wrap.className = 'tab-wrap';
+        // tab wrapper — skip hidden spaces (unless it's currently the active one)
+        if (!sp.hidden || si === activeSpaceIdx) {
+          const wrap = document.createElement('div');
+          wrap.className = 'tab-wrap';
 
-        // tab button
-        const btn = document.createElement('button');
-        btn.className = 'tab-btn' + (si === activeSpaceIdx ? ' active' : '');
-        btn.textContent = sp.name;
-        btn.dataset.spaceIdx = si;
-        btn.addEventListener('click', () => { activeSpaceIdx = si; renderAll(); });
+          // tab button
+          const btn = document.createElement('button');
+          btn.className = 'tab-btn' + (si === activeSpaceIdx ? ' active' : '');
+          btn.textContent = sp.name;
+          btn.dataset.spaceIdx = si;
+          btn.addEventListener('click', () => { activeSpaceIdx = si; renderAll(); });
 
-        // rename button
-        const renameBtn = document.createElement('button');
-        renameBtn.className = 'tab-action';
-        renameBtn.title = 'Rename space';
-        renameBtn.textContent = '✏️';
-        renameBtn.addEventListener('click', e => {
-          e.stopPropagation();
-          const name = prompt('Space name:', sp.name);
-          if (!name || !name.trim()) return;
-          sp.name = name.trim();
-          saveLocal();
-          renderAll();
-        });
+          // rename button
+          const renameBtn = document.createElement('button');
+          renameBtn.className = 'tab-action';
+          renameBtn.title = 'Rename space';
+          renameBtn.textContent = '✏️';
+          renameBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            const name = prompt('Space name:', sp.name);
+            if (!name || !name.trim()) return;
+            sp.name = name.trim();
+            saveLocal();
+            renderAll();
+          });
 
-        // delete button
-        const delBtn = document.createElement('button');
-        delBtn.className = 'tab-action danger';
-        delBtn.title = 'Delete space';
-        delBtn.textContent = '🗑';
-        delBtn.addEventListener('click', e => {
-          e.stopPropagation();
-          if (DATA.spaces.length <= 1) { alert('至少保留一个空间。'); return; }
-          if (!confirm(`确认删除空间「${sp.name}」及其所有 block？`)) return;
-          DATA.spaces.splice(si, 1);
-          if (activeSpaceIdx >= DATA.spaces.length) activeSpaceIdx = DATA.spaces.length - 1;
-          saveLocal();
-          renderAll();
-        });
+          // delete button
+          const delBtn = document.createElement('button');
+          delBtn.className = 'tab-action danger';
+          delBtn.title = 'Delete space';
+          delBtn.textContent = '🗑';
+          delBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            if (DATA.spaces.length <= 1) { alert('至少保留一个空间。'); return; }
+            if (!confirm(`确认删除空间「${sp.name}」及其所有 block？`)) return;
+            DATA.spaces.splice(si, 1);
+            if (activeSpaceIdx >= DATA.spaces.length) activeSpaceIdx = DATA.spaces.length - 1;
+            saveLocal();
+            renderAll();
+          });
 
-        const actions = document.createElement('div');
-        actions.className = 'tab-actions';
-        actions.appendChild(renameBtn);
-        actions.appendChild(delBtn);
+          const actions = document.createElement('div');
+          actions.className = 'tab-actions';
+          actions.appendChild(renameBtn);
+          actions.appendChild(delBtn);
 
-        wrap.appendChild(btn);
-        wrap.appendChild(actions);
-        tabs.appendChild(wrap);
+          wrap.appendChild(btn);
+          wrap.appendChild(actions);
+          tabs.appendChild(wrap);
+        } // end if !sp.hidden
 
         // space div
         const spDiv = document.createElement('div');
@@ -7336,6 +7478,7 @@
         });
       });
 
+      updateMoreBtn();
       initSortable();
       renderPinnedBar();
       applySearch();
@@ -7343,6 +7486,101 @@
       // Defer layout to after browser has painted & computed heights
       requestAnimationFrame(() => requestAnimationFrame(layoutBlocks));
     }
+
+    // ── More-spaces dropdown ──────────────────────────────────────────────────────
+    function updateMoreBtn() {
+      const btn = document.getElementById('tabs-more-btn');
+      const hiddenCount = DATA.spaces.filter(sp => sp.hidden).length;
+      btn.classList.toggle('has-hidden', hiddenCount > 0);
+      btn.innerHTML = hiddenCount > 0
+        ? `⋯ <span class="more-badge">${hiddenCount}</span>`
+        : '';
+    }
+
+    function openMoreDropdown() {
+      const btn = document.getElementById('tabs-more-btn');
+      const dd = document.getElementById('more-dropdown');
+      dd.innerHTML = '';
+
+      const visibleSpaces = DATA.spaces.filter(sp => !sp.hidden);
+      const hiddenSpaces  = DATA.spaces.filter(sp => sp.hidden);
+
+      function makeItem(sp, si) {
+        const item = document.createElement('div');
+        item.className = 'more-space-item' + (si === activeSpaceIdx ? ' is-active' : '');
+
+        const name = document.createElement('span');
+        name.textContent = sp.name;
+        name.style.flex = '1';
+        name.addEventListener('click', e => {
+          e.stopPropagation();
+          activeSpaceIdx = si;
+          dd.classList.remove('open');
+          renderAll();
+        });
+
+        const visBtn = document.createElement('button');
+        visBtn.className = 'more-vis-btn';
+        visBtn.title = sp.hidden ? '显示在标签栏' : '从标签栏隐藏';
+        visBtn.textContent = sp.hidden ? '👁' : '🚫';
+        visBtn.addEventListener('click', e => {
+          e.stopPropagation();
+          const visibleAfter = DATA.spaces.filter(s => !s.hidden && s !== sp);
+          if (!sp.hidden && visibleAfter.length === 0) { alert('至少保留一个显示的空间。'); return; }
+          sp.hidden = !sp.hidden;
+          if (sp.hidden && si === activeSpaceIdx) {
+            // switch active to first visible
+            activeSpaceIdx = DATA.spaces.findIndex(s => !s.hidden);
+          }
+          saveLocal();
+          renderAll();
+          openMoreDropdown(); // re-render dropdown in place
+        });
+
+        item.appendChild(name);
+        item.appendChild(visBtn);
+        return item;
+      }
+
+      // Section: Hidden (shown first so user can restore)
+      if (hiddenSpaces.length > 0) {
+        const lbl = document.createElement('div');
+        lbl.className = 'section-label';
+        lbl.textContent = '已隐藏的空间';
+        dd.appendChild(lbl);
+        hiddenSpaces.forEach(sp => dd.appendChild(makeItem(sp, DATA.spaces.indexOf(sp))));
+        if (visibleSpaces.length > 0) {
+          const div = document.createElement('div');
+          div.className = 'more-divider';
+          dd.appendChild(div);
+        }
+      }
+
+      // Section: Visible (so user can hide them)
+      if (visibleSpaces.length > 0) {
+        const lbl = document.createElement('div');
+        lbl.className = 'section-label';
+        lbl.textContent = '已显示的空间';
+        dd.appendChild(lbl);
+        visibleSpaces.forEach(sp => dd.appendChild(makeItem(sp, DATA.spaces.indexOf(sp))));
+      }
+
+      // Position below the button
+      const r = btn.getBoundingClientRect();
+      dd.style.top = (r.bottom + 6) + 'px';
+      dd.style.left = Math.min(r.left, window.innerWidth - 200) + 'px';
+      dd.classList.add('open');
+    }
+
+    document.getElementById('tabs-more-btn').addEventListener('click', e => {
+      e.stopPropagation();
+      const dd = document.getElementById('more-dropdown');
+      if (dd.classList.contains('open')) { dd.classList.remove('open'); return; }
+      openMoreDropdown();
+    });
+    document.addEventListener('click', () => {
+      document.getElementById('more-dropdown').classList.remove('open');
+    });
 
     let _layoutTimer = null;
     window.addEventListener('resize', () => {
