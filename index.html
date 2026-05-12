@@ -7115,6 +7115,7 @@
         }
         syncConfig = { pat, gistId };
         saveConfig();
+        localStorage.removeItem(LS_SYNC); // force pull from new gist
         setSyncStatus('ok', 'Synced');
         hideSetup();
         await pullGist();
