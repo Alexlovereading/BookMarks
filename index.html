@@ -412,18 +412,16 @@
     #app {
       display: flex;
       flex-direction: column;
-      height: 100vh;
-      height: 100dvh;
-      /* modern browsers */
-      height: -webkit-fill-available;
-      /* iOS Safari fallback */
+      height: 100%;
+      overflow: hidden;
     }
 
     #content {
       flex: 1;
+      min-height: 0;
+      /* critical: lets flex child shrink & scroll */
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
-      /* smooth scroll on iOS */
       padding: 10px 12px 8px
     }
 
@@ -1275,8 +1273,9 @@
         order: unset;
         flex: 1;
         min-width: 0;
-        overflow-x: auto;
+        overflow-x: scroll;
         -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
         scrollbar-width: none;
         flex-wrap: nowrap;
       }
@@ -7294,6 +7293,7 @@
     ];
 
     // ── State ───────────────────────────────────────────────────────────
+    const isMobile = 'ontouchstart' in window;
     let DATA = null;  // { version, spaces:[{id,name,blocks:[{id,title,group,color,bookmarks:[{id,title,url}]}]}] }
     let activeSpaceIdx = 0;
     let syncConfig = null;  // {pat, gistId}
@@ -7415,6 +7415,7 @@
       syncConfig = null;
       setSyncStatus('', 'Local only');
       hideSetup();
+      requestAnimationFrame(() => requestAnimationFrame(layoutBlocks));
     });
     document.getElementById('setup-confirm').addEventListener('click', async () => {
       const pat = document.getElementById('setup-pat').value.trim();
@@ -8049,7 +8050,8 @@
         animation: 150,
         delay: 150,
         delayOnTouchOnly: true,
-        forceFallback: true,
+        forceFallback: !isMobile,
+        touchStartThreshold: 8,
         ghostClass: 'tab-ghost',
         chosenClass: 'tab-chosen',
         onEnd(evt) {
@@ -8083,12 +8085,13 @@
         const si = parseInt(grid.dataset.spaceIdx);
         const s = Sortable.create(grid, {
           group: 'blocks-s' + si,
-          animation: 0,           // disable animation to prevent columns reflow glitch
+          animation: 0,
           handle: '.block-header',
           draggable: '.block-card',
           delay: 200,
           delayOnTouchOnly: true,
-          forceFallback: true,
+          forceFallback: !isMobile,
+          touchStartThreshold: 8,
           ghostClass: 'drag-ghost',
           chosenClass: 'drag-chosen',
           onStart(evt) {
@@ -8165,7 +8168,8 @@
           animation: 120,
           delay: 200,
           delayOnTouchOnly: true,
-          forceFallback: true,
+          forceFallback: !isMobile,
+          touchStartThreshold: 8,
           filter: '.bm-del',
           preventOnFilter: false,
           ghostClass: 'bm-ghost',
@@ -8193,6 +8197,8 @@
         animation: 120,
         delay: 200,
         delayOnTouchOnly: true,
+        forceFallback: !isMobile,
+        touchStartThreshold: 8,
         ghostClass: 'bm-ghost',
         chosenClass: 'bm-chosen',
         onAdd(evt) {
